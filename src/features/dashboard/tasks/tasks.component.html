@@ -1,0 +1,52 @@
+<div class="tasks-container">
+  <header class="tasks-header">
+    <h1>Мої завдання</h1>
+    <button class="btn-logout" (click)="authService.logout()">Вийти</button>
+  </header>
+
+  <button class="btn-add" (click)="openCreateModal()">+ Нове завдання</button>
+
+  <div class="tasks-grid">
+    @for (task of tasks; track task.id) {
+    <div class="task-card">
+      <h3>{{ task.title }}</h3>
+      <p>{{ task.description || "Без опису" }}</p>
+      <span class="status-badge {{ task.status }}">{{ task.status }}</span>
+      <div class="task-actions">
+        <button class="btn-action primary" (click)="openEditModal(task)">
+          Редагувати
+        </button>
+        <button class="btn-action danger" (click)="deleteTask(task.id!)">
+          Видалити
+        </button>
+      </div>
+    </div>
+    }
+  </div>
+
+  @if (showModal) {
+  <div class="modal-overlay" (click)="closeModal()">
+    <div class="modal" (click)="$event.stopPropagation()">
+      <h2>{{ isEdit ? "Редагувати" : "Нове завдання" }}</h2>
+      <form [formGroup]="taskForm" (ngSubmit)="saveTask()">
+        <input formControlName="title" placeholder="Назва" required />
+        <textarea
+          formControlName="description"
+          placeholder="Опис (необов’язково)"
+        ></textarea>
+        <select formControlName="status">
+          <option value="todo">To Do</option>
+          <option value="in-progress">In Progress</option>
+          <option value="done">Done</option>
+        </select>
+        <div class="modal-buttons">
+          <button type="button" (click)="closeModal()">Скасувати</button>
+          <button type="submit" [disabled]="taskForm.invalid">
+            {{ isEdit ? "Зберегти" : "Створити" }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  }
+</div>

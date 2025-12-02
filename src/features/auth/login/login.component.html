@@ -1,0 +1,40 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <h1>TaskMaster Pro</h1>
+
+    <form [formGroup]="forms" (submit)="login()">
+      <input
+        formControlName="email"
+        type="email"
+        placeholder="Email"
+        required
+        class="auth-input"
+      />
+      <input
+        formControlName="password"
+        type="password"
+        placeholder="Пароль"
+        required
+        class="auth-input"
+      />
+
+      <button
+        type="submit"
+        class="auth-btn primary"
+        [disabled]="
+          loading || !forms.get('email')?.value || !forms.get('password')?.value
+        "
+      >
+        @if (loading){
+        <span>Зачекайте...</span>
+        } @else {
+        <span>Увійти</span>
+        }
+      </button>
+    </form>
+
+    <p class="auth-link">
+      Немає акаунту? <a routerLink="/register">Зареєструватись</a>
+    </p>
+  </div>
+</div>

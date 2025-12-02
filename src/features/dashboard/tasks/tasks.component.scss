@@ -1,0 +1,103 @@
+.tasks-container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-add,
+.btn-logout {
+  padding: 12px 24px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.tasks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.task-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.status-badge.todo {
+  background: #ef4444;
+  color: white;
+}
+.status-badge.in-progress {
+  background: #f59e0b;
+  color: white;
+}
+.status-badge.done {
+  background: #10b981;
+  color: white;
+}
+.task-actions button {
+  margin-right: 8px;
+  margin-top: 16px;
+}
+.btn-action {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.danger {
+  background: #ef4444;
+  color: white;
+}
+.primary {
+  background: #f59e0b;
+  color: white;
+}
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+}
+.modal input,
+.modal textarea,
+.modal select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-add {
+  margin: 10px;
+}

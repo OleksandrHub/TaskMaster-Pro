@@ -1,0 +1,39 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <h1>Реєстрація</h1>
+
+    <form [formGroup]="forms" (ngSubmit)="register()">
+      <input
+        formControlName="email"
+        type="email"
+        placeholder="Email"
+        required
+        class="auth-input"
+      />
+      <input
+        formControlName="password"
+        type="password"
+        placeholder="Пароль (мін. 6 символів)"
+        required
+        minlength="6"
+        class="auth-input"
+      />
+
+      <p>{{ forms.valid ? "Все вірно" : "Заповніть форму правильно" }}</p>
+
+      <button
+        type="submit"
+        class="auth-btn primary"
+        [disabled]="loading || forms.invalid"
+      >
+        @if (loading){
+        <span>Зачекайте...</span>
+        } @else {
+        <span>Зареєструватись</span>
+        }
+      </button>
+    </form>
+
+    <p class="auth-link">Вже є акаунт? <a routerLink="/login">Увійти</a></p>
+  </div>
+</div>

@@ -8,7 +8,9 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss",
-          "skipTests": true
+          "skipTests": true,
+          "flat": false,
+          "standalone": true
         },
         "@schematics/angular:class": {
           "skipTests": true
@@ -116,5 +118,22 @@
         }
       }
     }
+  },
+  "schematics": {
+    "@angular/core:component": {
+      "inlineStyle": false,
+      "inlineTemplate": false,
+      "spec": true,
+      "styleext": "scss"
+    },
+    "@schematics/angular:component": {
+      "inlineStyle": false,
+      "inlineTemplate": false,
+      "skipTests": false,
+      "style": "scss"
+    }
+  },
+  "cli": {
+    "analytics": false
   }
 }
