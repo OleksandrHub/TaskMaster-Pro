@@ -29,9 +29,10 @@
 - AuthGuard, Interceptors, Signals
 
 ### Демо
-🔗 https://taskflow-angular.web.app (або твій Vercel/Netlify)
+(Немає)
 
 ### Скріншоти
+(Відсутні)
 ![Dashboard](/screenshots/dashboard-light.png)
 ![Kanban Dark](/screenshots/kanban-dark.png)
 ![Task Detail](/screenshots/task-detail.png)
